@@ -1,12 +1,11 @@
 local opts = { noremap = true, silent = true }
+local builtin = require('telescope.builtin')
 
 -- Find files using Telescope command-line sugar.
-vim.api.nvim_set_keymap("n", "<leader>ff", "<cmd>Telescope find_files<cr>", opts)
-vim.api.nvim_set_keymap("n", "<leader>fg", "<cmd>Telescope live_grep<cr>", opts)
-vim.api.nvim_set_keymap("n", "<leader>fb", "<cmd>Telescope buffers<cr>", opts)
-vim.api.nvim_set_keymap(n, "<leader>fg", "<cmd>Telescope live_grep<cr>", opts)
-vim.api.nvim_set_keymap("n", "<leader>fh", "<cmd>Telescope help_tags<cr>", opts)
-
+vim.keymap.set('n', '<leader>ff', builtin.find_files, opts)
+vim.keymap.set('n', '<leader>fg', builtin.live_grep, opts)
+vim.keymap.set('n', '<leader>fb', builtin.buffers, opts)
+vim.keymap.set('n', '<leader>fh', builtin.help_tags, opts)
 -- Undo tree
 vim.api.nvim_set_keymap("n", "<leader>u", ":Telescope undo<CR>", opts)
 
@@ -37,26 +36,25 @@ vim.api.nvim_set_keymap("n", "<F5>", ":Telescope file_browser<CR>", opts)
 require("telescope").setup {
     extensions = {
         file_browser = {
-            theme = ivy,
+            theme = "ivy",
             -- disables netrw and use telescope-file-browser in its place
             hijack_netrw = true,
             mappings = {
                 ["i"] = {
-                    -- your custom insert mode mappings
+                -- your custom insert mode mappings
                 },
-
                 ["n"] = {
-                    -- your custom normal mode mappings
+                -- your custom normal mode mappings
                 },
             },
         },
 
         undo = {
             use_delta = true,
-            use_custom_command = nil, -- setting this implies `use_delta = false`. Accepted format is: { bash, -c, echo '$DIFF' | delta }
+            use_custom_command = nil, -- setting this implies `use_delta = false`. Accepted format is: { "bash", "-c", "echo '$DIFF' | delta" }
             side_by_side = false,
             diff_context_lines = vim.o.scrolloff,
-            entry_format = state #$ID, $STAT, $TIME,
+            entry_format = "state #$ID, $STAT, $TIME",
             mappings = {
                 i = {
                     -- IMPORTANT: Note that telescope-undo must be available when telescope is configured if
@@ -64,9 +62,9 @@ require("telescope").setup {
                     -- installing as a dependency of telescope in it's `requirements` and loading this
                     -- extension from there instead of having the separate plugin definition as outlined
                     -- above.
-                    ["<cr>"] = require(telescope-undo.actions).yank_additions,
-                    ["<S-cr>"] = require(telescope-undo.actions).yank_deletions,
-                    ["<C-cr>"] = require(telescope-undo.actions).restore,
+                    ["<cr>"] = require("telescope-undo.actions").yank_additions,
+                    ["<S-cr>"] = require("telescope-undo.actions").yank_deletions,
+                    ["<C-cr>"] = require("telescope-undo.actions").restore,
                 },
             },
         },
@@ -74,5 +72,5 @@ require("telescope").setup {
 }
 -- To get telescope-file-browser loaded and working with telescope,
 -- you need to call load_extension, somewhere after setup function:
-require("telescope").load_extension file_browser
-require("telescope").load_extension undo
+require("telescope").load_extension "file_browser"
+require("telescope").load_extension "undo"

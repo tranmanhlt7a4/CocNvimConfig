@@ -105,4 +105,4 @@ endfor
 
 syntax on
 "  colorscheme onedark
-colorscheme cabonfox
+colorscheme carbonfox

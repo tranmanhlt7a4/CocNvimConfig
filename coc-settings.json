@@ -1,0 +1,67 @@
+{
+	"coc.source.file.shortcut": "File",
+	 "coc.source.around.shortcut": "?",
+	 "suggest.labelMaxLength": 80,
+	 //"suggest.disableKind": true,
+	 "suggest.completionItemKindLabels": {
+		 "keyword": "\uf1de Keyword",
+		 "variable": "\ue79b Variable",
+		 "value": "\uf89f Value",
+		 "operator": "\u03a8 Operator",
+		 "constructor": "\uf0ad Constructor",
+		 "function": "\u0192 Function",
+		 "reference": "\ufa46 Reference",
+		 "constant": "\uf8fe Constant",
+		 "method": "\uf09a Method",
+		 "struct": "\ufb44 Struct",
+		 "class": "\uf0e8 Class",
+		 "interface": "\uf417 Interface",
+		 "text": "\ue612 Text",
+		 "enum": "\uf435 Enum",
+		 "enumMember": "\uf02b Enum Member",
+		 "module": "\uf40d Module",
+		 "color": "\ue22b Color",
+		 "property": "\ue624 Property",
+		 "field": "\uf9be Field",
+		 "unit": "\uf475 Unit",
+		 "event": "\ufacd Event",
+		 "file": "\uf723 File",
+		 "folder": "\uf114 Folder",
+		 "snippet": "\ue60b Snippet",
+		 "typeParameter": "\uf728 Type Parameter",
+		 "default": "\uf29c default"
+	  },
+	  "languageserver": {
+		  // C++
+		  "ccls": {
+			  "command": "ccls",
+			  "filetypes": ["c", "cpp", "cuda", "objc", "objcpp"],
+			  "rootPatterns": [".ccls", "compile_commands.json"],
+			  "initializationOptions": {
+				  "cache": {
+					  "directory": ".ccls-cache",
+					  "format": "binary"
+				  },
+				  "client": {
+					  "snippetSupport": true
+				  },
+				  "index": {
+					  "onChange": true
+				  },
+				  "highlight": {
+					  "lsRanges": true
+				  }
+			  }
+		  },
+		  "cmake": {
+			  "command": "cmake-language-server",
+			  "filetypes": ["cmake"],
+			  "rootPatterns": [
+				  "build/"
+			  ],
+			  "initializationOptions": {
+				  "buildDirectory": "build"
+			  }
+		  }
+	  }
+  }

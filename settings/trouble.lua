@@ -7,7 +7,7 @@ vim.api.nvim_set_keymap("n", "<leader>xq", "<cmd>TroubleToggle quickfix<cr>", op
 vim.api.nvim_set_keymap("n", "<leader>xl", "<cmd>TroubleToggle loclist<cr>", opts)
 vim.api.nvim_set_keymap("n", "gR", "<cmd>TroubleToggle lsp_references<cr>", opts)
 
-" Config
+-- Config
 require("trouble").setup
 {
     position = "bottom", -- position of the list can be: bottom, top, left, right

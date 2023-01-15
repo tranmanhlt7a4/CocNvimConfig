@@ -1,17 +1,17 @@
 local opts = { noremap = true, silent = true }
 
 -- Find files using Telescope command-line sugar.
-vim.api.nvim_set_keymap(n, <leader>ff, <cmd>Telescope find_files<cr>, opts)
-vim.api.nvim_set_keymap(n, <leader>fg, <cmd>Telescope live_grep<cr>, opts)
-vim.api.nvim_set_keymap(n, <leader>fb, <cmd>Telescope buffers, opts)
-vim.api.nvim_set_keymap(n, <leader>fg, <cmd>Telescope live_grep<cr>, opts)
-vim.api.nvim_set_keymap(n, <leader>fh, <cmd>Telescope help_tags<cr>, opts)
+vim.api.nvim_set_keymap("n", "<leader>ff", "<cmd>Telescope find_files<cr>", opts)
+vim.api.nvim_set_keymap("n", "<leader>fg", "<cmd>Telescope live_grep<cr>", opts)
+vim.api.nvim_set_keymap("n", "<leader>fb", "<cmd>Telescope buffers<cr>", opts)
+vim.api.nvim_set_keymap(n, "<leader>fg", "<cmd>Telescope live_grep<cr>", opts)
+vim.api.nvim_set_keymap("n", "<leader>fh", "<cmd>Telescope help_tags<cr>", opts)
 
 -- Undo tree
-vim.api.nvim_set_keymap(n, <leader>u, :Telescope undo<CR>, opts)
+vim.api.nvim_set_keymap("n", "<leader>u", ":Telescope undo<CR>", opts)
 
 -- Map file browser
-vim.api.nvim_set_keymap(n, <F5>, :Telescope file_browser<CR>, opts)
+vim.api.nvim_set_keymap("n", "<F5>", ":Telescope file_browser<CR>", opts)
 
 -- NOTE: File browser actions
 -- Insert / Normal    fb_actions            Description
@@ -41,11 +41,11 @@ require(telescope).setup {
             -- disables netrw and use telescope-file-browser in its place
             hijack_netrw = true,
             mappings = {
-                [i] = {
+                ["i"] = {
                     -- your custom insert mode mappings
                 },
 
-                [n] = {
+                ["n"] = {
                     -- your custom normal mode mappings
                 },
             },
@@ -64,9 +64,9 @@ require(telescope).setup {
                     -- installing as a dependency of telescope in it's `requirements` and loading this
                     -- extension from there instead of having the separate plugin definition as outlined
                     -- above.
-                    [<cr>] = require(telescope-undo.actions).yank_additions,
-                    [<S-cr>] = require(telescope-undo.actions).yank_deletions,
-                    [<C-cr>] = require(telescope-undo.actions).restore,
+                    ["<cr>"] = require(telescope-undo.actions).yank_additions,
+                    ["<S-cr>"] = require(telescope-undo.actions).yank_deletions,
+                    ["<C-cr>"] = require(telescope-undo.actions).restore,
                 },
             },
         },

@@ -1,8 +1,16 @@
+-- Type 'r' to rename
+-- Type 'f' to find file
+-- Type 'a' to create new file
+-- Type 'c' to copy path
+-- Type 'x' to cut
+-- Type 'm' to mark
+-- Type 'd' to delete
+
 local opts = { noremap = true, silent = true }
 
 vim.api.nvim_set_keymap("n", "<leader>n", ":NvimTreeFocus<CR>", opts)
 vim.api.nvim_set_keymap("n", "<leader>r", ":NvimTreeRefresh<CR>", opts)
-vim.api.nvim_set_keymap("n", "<C-t>", ":NvimTreeToggle<CR>", opts)
+vim.api.nvim_set_keymap("n", "<space>e", ":NvimTreeToggle<CR>", opts)
 vim.api.nvim_set_keymap("n", "<C-f>", ":NvimTreeFindFile<CR>", opts)
 
 -- disable netrw at the very start of your init.lua (strongly advised)
@@ -36,11 +44,11 @@ require("nvim-tree").setup {
     cursorline = true,
     debounce_delay = 15,
     width = 30,
-    hide_root_folder = true,
+    hide_root_folder = false,
     side = "left",
     preserve_window_proportions = false,
-    number = false,
-    relativenumber = false,
+    number = true,
+    relativenumber = true,
     signcolumn = "yes",
     mappings = {
       custom_only = false,
@@ -62,16 +70,16 @@ require("nvim-tree").setup {
     },
   },
   renderer = {
-    add_trailing = false,
-    group_empty = false,
-    highlight_git = false,
+    add_trailing = true,
+    group_empty = true,
+    highlight_git = true,
     full_name = false,
     highlight_opened_files = "none",
     highlight_modified = "none",
     root_folder_label = ":~:s?$?/..?",
     indent_width = 2,
     indent_markers = {
-      enable = false,
+      enable = true,
       inline_arrows = true,
       icons = {
         corner = "└",
@@ -100,8 +108,8 @@ require("nvim-tree").setup {
         bookmark = "",
         modified = "●",
         folder = {
-          arrow_closed = "",
-          arrow_open = "",
+          arrow_closed = "▸",
+          arrow_open = "▾",
           default = "",
           open = "",
           empty = "",
@@ -138,8 +146,8 @@ require("nvim-tree").setup {
     args = {},
   },
   diagnostics = {
-    enable = false,
-    show_on_dirs = false,
+    enable = true,
+    show_on_dirs = true,
     show_on_open_dirs = true,
     debounce_delay = 50,
     severity = {
@@ -154,7 +162,7 @@ require("nvim-tree").setup {
     },
   },
   filters = {
-    dotfiles = false,
+    dotfiles = true,
     git_clean = false,
     no_buffer = false,
     custom = {},
@@ -173,7 +181,7 @@ require("nvim-tree").setup {
     timeout = 400,
   },
   modified = {
-    enable = false,
+    enable = true,
     show_on_dirs = true,
     show_on_open_dirs = true,
   },

@@ -115,13 +115,15 @@ call plug#begin(stdpath('config').'/plugged')
 call plug#end()
 
 " Load plugin settings and general settings
-let amount_plugin = 0
+let amount_of_plugins = 0
 for setting_file in split(glob(stdpath('config').'/settings/*.*'))
-    let amount_plugin = amount_plugin + 1
+    let amount_of_plugins = amount_of_plugins + 1
     execute 'source' setting_file
 endfor
 
-echo "Loaded "..amount_plugin.." plugin(s)"
+autocmd VimEnter * echo "Loaded "..amount_of_plugins.." plugin(s)"
+" Delete amount_of_plugin variable if don't need
+" autocmd VimEnter * unlet amount_of_plugin
 
 syntax on
 "  colorscheme onedark

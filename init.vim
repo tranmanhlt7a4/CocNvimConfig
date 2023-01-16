@@ -14,6 +14,9 @@ call plug#begin(stdpath('config').'/plugged')
     "Auto close tags
     Plug 'alvan/vim-closetag'
 
+    " Highlight words under cursor
+    Plug 'RRethy/vim-illuminate'
+
     " Status bar
     "  Plug 'vim-airline/vim-airline'
     "  Plug 'vim-airline/vim-airline-themes'

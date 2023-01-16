@@ -1,4 +1,4 @@
-" Load theme before to make sure we get right color for tab
+-- Load theme before to make sure we get right color for tab
 vim.cmd("colorscheme carbonfox")
 
 local map = vim.api.nvim_set_keymap

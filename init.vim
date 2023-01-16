@@ -23,6 +23,9 @@ call plug#begin(stdpath('config').'/plugged')
     Plug 'jiangmiao/auto-pairs'
     Plug 'luochen1990/rainbow'
 
+    " Better search
+    Plug 'kevinhwang91/nvim-hlslens'
+
     " HTML
     Plug 'mattn/emmet-vim'
 

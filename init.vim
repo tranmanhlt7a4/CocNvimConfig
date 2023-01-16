@@ -115,9 +115,13 @@ call plug#begin(stdpath('config').'/plugged')
 call plug#end()
 
 " Load plugin settings and general settings
+let amount_plugin = 0
 for setting_file in split(glob(stdpath('config').'/settings/*.*'))
+    let amount_plugin = amount_plugin + 1
     execute 'source' setting_file
 endfor
+
+echo "Loaded "..amount_plugin.." plugin(s)"
 
 syntax on
 "  colorscheme onedark

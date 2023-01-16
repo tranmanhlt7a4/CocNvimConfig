@@ -23,7 +23,7 @@ call plug#begin(stdpath('config').'/plugged')
     Plug 'nvim-lualine/lualine.nvim'
 
     " Tabline
-    Plug 'noib3/nvim-cokeline'
+    Plug 'romgrk/barbar.nvim'
 
     " Auto pair brackets
     Plug 'jiangmiao/auto-pairs'
@@ -56,8 +56,7 @@ call plug#begin(stdpath('config').'/plugged')
     Plug 'nvim-tree/nvim-tree.lua'
 
     " Theme
-    "  Plug 'joshdick/onedark.vim'
-    Plug 'EdenEast/nightfox.nvim'
+    Plug 'romgrk/doom-one.vim' " Better theme for barbar
 
     " Code intellisense
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -120,5 +119,4 @@ for setting_file in split(glob(stdpath('config').'/settings/*.*'))
 endfor
 
 syntax on
-"  colorscheme onedark
-colorscheme carbonfox
+colorscheme doom-one

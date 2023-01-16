@@ -5,6 +5,9 @@ call plug#begin(stdpath('config').'/plugged')
     " See outline and all scope of code
     Plug 'simrat39/symbols-outline.nvim'
 
+    " Foaterm notify
+    Plug 'rcarriga/nvim-notify'
+
     "Auto close tags
     Plug 'alvan/vim-closetag'
 

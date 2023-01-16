@@ -33,6 +33,10 @@ call plug#begin(stdpath('config').'/plugged')
     " Highlight pair brackets
     Plug 'lukas-reineke/indent-blankline.nvim'
 
+    " UI toolbar
+    Plug 'folke/noice.nvim'
+    Plug 'MunifTanjim/nui.nvim'
+
     " Highlight css color
     Plug 'NvChad/nvim-colorizer.lua'
 

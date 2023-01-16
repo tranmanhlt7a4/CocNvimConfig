@@ -2,6 +2,9 @@ call plug#begin(stdpath('config').'/plugged')
     " Auto clean space in file when save
     Plug 'mcauley-penney/tidy.nvim'
 
+    " Diagnose scollbar
+    Plug 'petertriho/nvim-scrollbar'
+
     " See outline and all scope of code
     Plug 'simrat39/symbols-outline.nvim'
 

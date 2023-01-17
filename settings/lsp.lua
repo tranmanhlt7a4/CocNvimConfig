@@ -37,7 +37,12 @@ local lsp_flags = {
   debounce_text_changes = 150,
 }
 
-language_server = { 'pyright', 'ccls' }
+--Enable (broadcasting) snippet capability for completion (js)
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+
+
+local language_server = { 'pyright', 'ccls', 'jsonls', 'cmake', 'cssls', 'html', 'marksman', 'powershell_es', 'cssmodules_ls' }
 
 for index in pairs(language_server) do
   require('lspconfig')[language_server[index]].setup{
@@ -45,3 +50,11 @@ for index in pairs(language_server) do
     flags = lsp_flags,
   }
 end
+
+-- Language server should be installed!
+-- npm i -g bash-language-server (bash)
+-- ccls (C++/C/Objective-C)
+-- pyright (Python)
+-- npm i -g vscode-langservers-extracted (json, css, html)
+-- pip install cmake-language-server (cmake)
+-- npm install -g cssmodules-language-server (javascript, typescript)

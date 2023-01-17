@@ -1,4 +1,4 @@
-let g:coc_global_extensions = ['coc-json', 'coc-git', 'coc-cmake', 'coc-css', 'coc-html', 'coc-pyright', 'coc-diagnostic', 'coc-floaterm', 'coc-highlight', 'coc-html-css-support', 'coc-highlight', 'coc-markdownlint', 'coc-powershell', 'coc-sh', 'coc-snippets', 'coc-tsserver', 'coc-vimlsp']
+let g:coc_global_extensions = ['coc-json', 'coc-cmake', 'coc-css', 'coc-html', 'coc-pyright', 'coc-diagnostic', 'coc-floaterm', 'coc-html-css-support', 'coc-lightbulb', '@yaegassy/coc-marksman', 'coc-powershell', 'coc-sh', 'coc-snippets', 'coc-tsserver', 'coc-vimlsp']
 
 " May need for Vim (not Neovim) since coc.nvim calculates byte offset by count
 " utf-8 byte sequence
@@ -160,3 +160,29 @@ nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
+
+" Coc-vimlsp
+let g:markdown_fenced_languages = [
+      \ 'vim',
+      \ 'help'
+      \]
+  
+" Coc-snippet
+
+" Use <C-l> for trigger snippet expand.
+  imap <C-l> <Plug>(coc-snippets-expand)
+
+  " Use <C-j> for select text for visual placeholder of snippet.
+  vmap <C-j> <Plug>(coc-snippets-select)
+  
+  " Use <C-j> for jump to next placeholder, it's default of coc.nvim
+  let g:coc_snippet_next = '<c-j>'
+  
+  " Use <C-k> for jump to previous placeholder, it's default of coc.nvim
+  let g:coc_snippet_prev = '<c-k>'
+  
+  " Use <C-j> for both expand and jump (make expand higher priority.)
+  imap <C-j> <Plug>(coc-snippets-expand-jump)
+  
+  " Use <leader>x for convert visual selected code to snippet
+  xmap <leader>x  <Plug>(coc-convert-snippet)

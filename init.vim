@@ -7,7 +7,6 @@ call plug#begin(stdpath('config').'/plugged')
 
     " See outline and all scope of code
     Plug 'simrat39/symbols-outline.nvim'
-    Plug 'liuchengxu/vista.vim'
 
     " Foaterm notify
     Plug 'rcarriga/nvim-notify'

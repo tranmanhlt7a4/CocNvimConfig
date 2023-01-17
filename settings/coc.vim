@@ -1,4 +1,4 @@
-let g:coc_global_extensions = ['coc-json', 'coc-cmake', 'coc-css', 'coc-html', 'coc-pyright', 'coc-diagnostic', 'coc-floaterm', 'coc-html-css-support', 'coc-lightbulb', '@yaegassy/coc-marksman', 'coc-powershell', 'coc-sh', 'coc-snippets', 'coc-tsserver', 'coc-vimlsp']
+let g:coc_global_extensions = ['coc-json', 'coc-cmake', 'coc-css', 'coc-html', 'coc-pyright', 'coc-diagnostic', 'coc-floaterm', 'coc-html-css-support', '@yaegassy/coc-marksman', 'coc-powershell', 'coc-sh', 'coc-snippets', 'coc-tsserver', 'coc-vimlsp']
 
 " May need for Vim (not Neovim) since coc.nvim calculates byte offset by count
 " utf-8 byte sequence

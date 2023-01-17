@@ -76,6 +76,7 @@ call plug#begin(stdpath('config').'/plugged')
 
     " Additional plugin for Telescope
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+    Plug 'nvim-treesitter/playground'                             " Analyze syntax
     Plug 'nvim-telescope/telescope-file-browser.nvim'             " File browse telescope plugin
     Plug 'nvim-treesitter/nvim-treesitter-textobjects'
     Plug 'debugloop/telescope-undo.nvim'                          " Undo tree

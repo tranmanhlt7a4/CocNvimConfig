@@ -7,6 +7,7 @@ call plug#begin(stdpath('config').'/plugged')
 
     " See outline and all scope of code
     Plug 'simrat39/symbols-outline.nvim'
+    Plug 'liuchengxu/vista.vim'
 
     " Foaterm notify
     Plug 'rcarriga/nvim-notify'
@@ -56,6 +57,7 @@ call plug#begin(stdpath('config').'/plugged')
     Plug 'nvim-tree/nvim-tree.lua'
 
     " Theme
+    "  Plug 'joshdick/onedark.vim' 
     Plug 'romgrk/doom-one.vim' " Better theme for barbar
 
     " Code intellisense
